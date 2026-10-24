@@ -33,6 +33,44 @@ body {
     align-items: center;
 }
 
+.card {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    border-radius: 0.5rem;
+}
+
+.card.red {
+    color: red;
+}
+
+.card.black {
+    color: black;
+}
+
+.card::before, .card::after {
+    position: absolute;
+    content: attr(data-value);
+    font-size: 1rem;
+}
+
+.card::before {
+    top: 0.2rem;
+    left: 0.2rem;
+}
+
+.card::after {
+    bottom: 0.2rem;
+    right: 0.2rem;
+    transform: rotate(180deg);
+}
+
+
 .computer-deck {
     background: linear-gradient(180deg, #ff0000, #ff8080);
 }
